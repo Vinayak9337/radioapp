@@ -1,3 +1,48 @@
+## Pickcel Console E2E Tests (Playwright + TypeScript)
+
+End-to-end automation framework for `https://console.pickcel.com/#/` built with `@playwright/test`.
+
+### Prerequisites
+- Node.js 18+
+
+### Install
+```bash
+npm install
+npx playwright install
+```
+
+### Run tests
+```bash
+npm test
+```
+
+### View HTML report
+After a test run, open the HTML report:
+```bash
+npm run report
+```
+
+### Project structure
+```
+.
+├─ tests/             # Spec files
+├─ test-results/      # Artifacts per run (auto-created)
+├─ playwright-report/ # HTML report (auto-created after run)
+├─ package.json
+├─ playwright.config.ts
+└─ README.md
+```
+
+### Configuration
+- `playwright.config.ts` sets:
+  - `baseURL`: `https://console.pickcel.com/#/`
+  - Projects: Chromium, Firefox, WebKit
+  - Reporter: HTML
+  - Artifacts: trace on first retry, screenshots/videos on failure
+
+### Notes
+- Use `page.goto('/')` in tests to leverage the configured `baseURL`.
+- Customize timeouts and project settings in `playwright.config.ts` as needed.
 # AI-Powered Voice Assistant Flutter Radio App
 
 This is a radio app where you can ask Alan AI to play some music.
